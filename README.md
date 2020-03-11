@@ -5,6 +5,7 @@
 ## 1. Eureka
     1.1 Eureka第一印象
     Eureka是spring cloud的注册中心，可以理解成spring cloud注册和发现服务的组件，和zookeeper类似，组要是管理服务。
+    其中代码在eureka目录下
     
     1.2 Eureka主要注解说明
     @EnableEurekaServer // 表示是Eureka的服务，放在启动函数中
@@ -102,6 +103,7 @@ public class EurekaClientApplication {
     器发送请求。
     
     注意：当前项目中Ribbon是依赖于Eureka的，所以在启动Ribbon前，需启动Eureka
+    其中代码在ribbon目录下
     
     2.2 主要依赖
 ```xml
