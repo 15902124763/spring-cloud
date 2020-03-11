@@ -8,7 +8,16 @@
     @EnableEurekaServer // 表示是Eureka的服务，放在启动函数中
     @EnableEurekaClient // 表示是Eureka的客户端，即我们正常启动的springboot服务，放在启动函数中
     
-    1.3.1 Eureka的服务端配置文件
+    1.3 Eureka服务的用例说明
+    1.3.1 Eureka依赖
+```xml
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+    </dependency>
+```
+    
+    1.3.2 Eureka的服务端配置文件
     server.port=8761
     eureka.instance.hostname=localhost
     # 当前服务不用向注册中心注册
@@ -21,7 +30,7 @@
     # eureka server清理无效节点的时间间隔，默认60000毫秒，即60秒
     eureka.server.eviction-interval-timer-in-ms=60000
     
-    1.3.2Eureka的服务端启动
+    1.3.3 Eureka的服务端启动
 ```
     package com.eureka;
     
@@ -38,5 +47,43 @@
         }
     
     }
+```
+    1.4 Eureka客户端用例说明
+    1.4.1 Eureka依赖
+```xml
+   <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+   </dependency>
+```
+    
+    1.4.2 Eureka客户端配置文件说明
+    server.port=8000
+    spring.application.name=service-eureka-client
+    eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
+    # 开启健康检查
+    eureka.client.healthcheck.enabled=true
+    # eureka client发送心跳给server端的频率。如果在leaseExpirationDurationInSeconds后，server端没有收到client的心跳，则将摘除该instance
+    eureka.instance.lease-renewal-interval-in-seconds=3
+    # eureka server至上一次收到client的心跳之后，等待下一次心跳的超时时间，在这个时间内若没收到下一次心跳，则将移除该instance
+    eureka.instance.lease-expiration-duration-in-seconds=6
+    
+    1.4.3 客户端启动
+```
+package com.eureka;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+@SpringBootApplication
+@EnableEurekaClient
+public class EurekaClientApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(EurekaClientApplication.class, args);
+    }
+
+}
 ```
     
