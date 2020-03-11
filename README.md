@@ -2,7 +2,7 @@
 [官方文档地址](https://spring.io/projects/spring-cloud-netflix/)  
     SpringBoot版本：2.2.5.RELEASE
 
-### 1. Eureka
+## 1. Eureka
     1.1 Eureka第一印象
     Eureka是spring cloud的注册中心，可以理解成spring cloud注册和发现服务的组件，和zookeeper类似，组要是管理服务。
     
@@ -90,6 +90,14 @@ public class EurekaClientApplication {
     }
 
 }
-```
+```  
+    
+    
+## 2. Ribbon
+    2.1 Ribbon的第一印象
+    spring Cloud Ribbon 是一个客户端的负载均衡器，它提供对大量的HTTP和TCP客户端的访问控制。
+    
+    客户端负载均衡即是当浏览器向后台发出请求的时候，客户端会向 Eureka Server 读取注册到服务器的可用服务信息列表，然后根据设定的负载均衡策略（没有设置即用默认的），抉择出向哪台服务器发送请求。
+    
 
     
