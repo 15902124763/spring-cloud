@@ -1,5 +1,5 @@
 # Spring Cloud 各个组件的使用用例
-    [官方文档地址](https://spring.io/projects/spring-cloud-netflix)
+[官方文档地址](https://spring.io/projects/spring-cloud-netflix/)
 ### 1. Eureka
     1.1 Eureka第一印象
     Eureka是spring cloud的注册中心，可以理解成spring cloud注册和发现服务的组件，和zookeeper类似，组要是管理服务。
@@ -22,7 +22,7 @@
     eureka.server.eviction-interval-timer-in-ms=60000
     
     1.3.2Eureka的服务端启动
-    ```
+```
     package com.eureka;
     
     import org.springframework.boot.SpringApplication;
@@ -38,5 +38,5 @@
         }
     
     }
-    ```   
+```
     
