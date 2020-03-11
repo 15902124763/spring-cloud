@@ -58,8 +58,8 @@
         <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
    </dependency>
 ```
-    
     1.4.2 Eureka客户端配置文件说明
+```    
     server.port=8000
     spring.application.name=service-eureka-client
     eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
@@ -69,8 +69,8 @@
     eureka.instance.lease-renewal-interval-in-seconds=3
     # eureka server至上一次收到client的心跳之后，等待下一次心跳的超时时间，在这个时间内若没收到下一次心跳，则将移除该instance
     eureka.instance.lease-expiration-duration-in-seconds=6
-    
-    1.4.3 客户端启动
+```
+    1.4.3 Eureka客户端启动代码
 ```
 package com.eureka;
 
@@ -88,4 +88,5 @@ public class EurekaClientApplication {
 
 }
 ```
+
     
