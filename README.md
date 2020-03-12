@@ -1,6 +1,6 @@
 # Spring Cloud 各个组件的使用用例
 [官方文档地址](https://spring.io/projects/spring-cloud-netflix/)  
-    SpringBoot版本：2.2.5.RELEASE
+    SpringBoot版本：2.2.5.RELEASE    
     Spring Cloud版本：Hoxton.SR1
 ## 1. Eureka
     1.1 Eureka第一印象
